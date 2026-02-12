@@ -31,23 +31,16 @@ The goal is to measure not only portfolio performance, but also tail risk under 
 - Measures the worst loss observed in the bottom 5% of historical outcomes.
 - Makes **no distributional assumptions**.
 
-\[
-VaR_{hist} = \text{5th percentile of returns}
-\]
-
 ---
 
 ### Parametric VaR (95%)
 
 - Assumes returns follow a normal distribution.
 - Uses mean and standard deviation of portfolio returns.
-
-\[
-VaR_{param} = \mu + Z\sigma
-\]
+- Mean + (Z × Standard Deviation)
 
 Where:
-- \( Z = -1.645 \) for 95% confidence.
+- Z = -1.645 for 95% confidence.
 
 ---
 
@@ -56,20 +49,16 @@ Where:
 - Calculates the **average loss** within the worst 5% of returns.
 - Captures the severity of tail risk beyond VaR.
 
-\[
-CVaR_{hist} = \text{Average of returns below VaR}
-\]
+Historical CVaR = Average (returns ≤ Historical VaR)
 
 ---
 
-### Parametric Expected Shortfall
+### Parametric Expected Shortfall (CVaR)
 
 - Computes tail average assuming normal distribution.
 - Uses the normal PDF and quantile function.
 
-\[
-ES = \mu - \sigma \frac{\phi(z)}{\alpha}
-\]
+Parametric CVaR = Mean − Std Dev × [ Normal_PDF(Z) / Alpha ]
 
 ---
 
@@ -86,7 +75,6 @@ ES = \mu - \sigma \frac{\phi(z)}{\alpha}
 
 - VaR provides a loss threshold.
 - CVaR measures how severe losses are beyond that threshold.
-- Regulatory frameworks (e.g., Basel III) prefer Expected Shortfall because it better captures extreme risk.
 
 This project demonstrates how portfolio optimization and risk management tools can be combined to evaluate both return efficiency and downside exposure.
 
