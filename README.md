@@ -58,7 +58,7 @@ Historical CVaR = Average (returns ≤ Historical VaR)
 - Computes tail average assuming normal distribution.
 - Uses the normal PDF and quantile function.
 
-Parametric CVaR = Mean − Std Dev × [ Normal_PDF(Z) / Alpha ]
+Parametric CVaR = Mean − Std Dev × [ -1.645 / Alpha ]
 
 ---
 
